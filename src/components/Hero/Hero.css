@@ -1,7 +1,7 @@
 /* Enhanced Hero Section Styles */
 .hero-section {
-    height: 100vh;
-    width: 99vw;
+    height: 120vh;
+    width: 100%;
     display: flex;
     align-items: center;
     position: relative;
@@ -14,7 +14,8 @@
     background-size: 100% 100%, 100% 100%, 100% 100%, 400% 400%;
     animation: gradientShift 20s ease infinite;
     color: white;
-    margin-top: 10vh;
+    margin-top: 0;
+    padding: 260px 0 150px 5vw;
   }
   
   @keyframes gradientShift {
@@ -918,137 +919,186 @@
     
     .container {
       gap: 3rem;
+      padding: 0 2rem;
     }
   }
   
   @media (max-width: 968px) {
+    .hero-section {
+      height: auto;
+      min-height: 100vh;
+      padding: 80px 0 4rem;
+    }
+
     .container {
       grid-template-columns: 1fr;
-      gap: 4rem;
+      gap: 3rem;
       text-align: center;
-      padding: 0 30px;
+      padding: 0 1.5rem;
     }
-  
+
     .hero-title {
       font-size: 3.2rem;
+      justify-content: center;
     }
-  
+
     .hero-subtitle {
       font-size: 1.5rem;
       justify-content: center;
     }
-  
+
     .hero-description {
       font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
     }
-  
+
     .hero-actions {
       justify-content: center;
+      gap: 1.5rem;
     }
-  
+
     .hero-social {
       justify-content: center;
     }
-  
+
     .profile-image {
-      width: 380px;
-      height: 380px;
+      width: 320px;
+      height: 320px;
+      margin: 0 auto;
     }
-  
+
     .achievement-badges {
       justify-content: center;
+      gap: 1rem;
     }
-  
+
+    .badge {
+      padding: 0.8rem 1.2rem;
+    }
+
     .floating-icon {
       display: none;
     }
-  
+
     .geometric-patterns {
       display: none;
+    }
+
+    .gradient-orb {
+      opacity: 0.3;
     }
   }
   
   @media (max-width: 768px) {
+    .hero-section {
+      padding: 80px 0 3rem;
+    }
+
     .hero-title {
       font-size: 2.8rem;
     }
-  
+
     .hero-subtitle {
       font-size: 1.3rem;
       flex-direction: column;
       gap: 0.5rem;
     }
-  
+
     .hero-description {
       font-size: 1.1rem;
+      padding: 0 1rem;
     }
-  
+
     .hero-actions {
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1rem;
     }
-  
+
     .btn {
       width: 100%;
-      max-width: 300px;
+      max-width: 280px;
       justify-content: center;
+      padding: 1rem 2rem;
     }
-  
-    .profile-image {
-      width: 320px;
-      height: 320px;
-    }
-  
-    .gradient-orb {
-      opacity: 0.4;
-    }
-  
-    .container {
-      padding: 0 20px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .hero-title {
-      font-size: 2.4rem;
-    }
-  
-    .hero-subtitle {
-      font-size: 1.2rem;
-    }
-  
-    .greeting {
-      font-size: 1.2rem;
-    }
-  
-    .hero-description {
-      font-size: 1rem;
-    }
-  
+
     .profile-image {
       width: 280px;
       height: 280px;
     }
-  
+
     .container {
-      padding: 0 15px;
-      gap: 3rem;
+      padding: 0 1rem;
     }
-  
+
     .achievement-badges {
-      gap: 1rem;
+      flex-wrap: wrap;
     }
-  
+
     .badge {
-      padding: 0.8rem 1.2rem;
+      flex: 1 1 calc(50% - 1rem);
+      min-width: 140px;
     }
+  }
   
+  @media (max-width: 480px) {
+    .hero-section {
+      padding: 80px 0 2rem;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .greeting {
+      font-size: 1.2rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .profile-image {
+      width: 240px;
+      height: 240px;
+    }
+
+    .container {
+      gap: 2rem;
+    }
+
+    .achievement-badges {
+      gap: 0.8rem;
+    }
+
+    .badge {
+      padding: 0.7rem 1rem;
+    }
+
     .badge-number {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
-  
-    .floating-shape {
-      opacity: 0.5;
+
+    .badge-text {
+      font-size: 0.8rem;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+    }
+
+    .scroll-indicator {
+      bottom: 1.5rem;
+    }
+
+    .scroll-text {
+      font-size: 0.9rem;
     }
   }
