@@ -65,29 +65,29 @@ const Hero = () => {
         <div className="gradient-mesh"></div>
         <div className="noise-overlay"></div>
         
-        {/* Enhanced floating shapes */}
+        {/* Enhanced floating shapes - reduced from 12 to 6 */}
         <div className="floating-shapes">
-          {[...Array(12)].map((_, i) => (
+          {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
               className={`floating-shape shape-${i + 1}`}
               animate={{
-                y: [-30, 30, -30],
-                x: [-10, 10, -10],
-                rotate: [0, 360],
-                scale: [0.8, 1.2, 0.8]
+                y: [-20, 20, -20],
+                x: [-5, 5, -5],
+                rotate: [0, 180],
+                scale: [0.9, 1.1, 0.9]
               }}
               transition={{
-                duration: 6 + i * 0.3,
+                duration: 8 + i * 0.3,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: "linear",
                 delay: i * 0.2
               }}
             />
           ))}
         </div>
 
-        {/* Enhanced floating icons with more variety */}
+        {/* Enhanced floating icons - reduced from 6 to 3 */}
         <motion.div 
           className="floating-icon floating-icon-1"
           variants={floatingItemVariants}
@@ -118,42 +118,10 @@ const Hero = () => {
           <Sparkles size={28} />
         </motion.div>
 
-        <motion.div 
-          className="floating-icon floating-icon-4"
-          variants={floatingItemVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1.9 }}
-        >
-          <Zap size={28} />
-        </motion.div>
-
-        <motion.div 
-          className="floating-icon floating-icon-5"
-          variants={floatingItemVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 2.2 }}
-        >
-          <Star size={28} />
-        </motion.div>
-
-        <motion.div 
-          className="floating-icon floating-icon-6"
-          variants={floatingItemVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 2.5 }}
-        >
-          <Heart size={28} />
-        </motion.div>
-
-        {/* Geometric patterns */}
+        {/* Geometric patterns - reduced to 2 */}
         <div className="geometric-patterns">
           <div className="pattern-circle pattern-1"></div>
           <div className="pattern-triangle pattern-2"></div>
-          <div className="pattern-square pattern-3"></div>
-          <div className="pattern-hexagon pattern-4"></div>
         </div>
       </div>
 
@@ -474,33 +442,31 @@ const Hero = () => {
         </motion.a>
       </motion.div>
 
-      {/* Enhanced Particles with different sizes and colors */}
+      {/* Enhanced Particles - reduced from 25 to 12 */}
       <div className="particles">
-        {[...Array(25)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
             className={`particle particle-${i + 1}`}
             animate={{
-              y: [-15, -40, -15],
-              opacity: [0.2, 1, 0.2],
-              scale: [0.5, 1.5, 0.5],
-              rotate: [0, 180, 360]
+              y: [-10, -30, -10],
+              opacity: [0.3, 0.8, 0.3],
+              scale: [0.8, 1.2, 0.8],
+              rotate: [0, 180]
             }}
             transition={{
-              duration: 4 + Math.random() * 3,
+              duration: 6 + Math.random() * 2,
               repeat: Infinity,
-              delay: Math.random() * 3,
-              ease: "easeInOut"
+              delay: Math.random() * 2,
+              ease: "linear"
             }}
           />
         ))}
       </div>
 
-      {/* Additional decorative elements */}
+      {/* Light rays - reduced to 1 */}
       <div className="light-rays">
         <div className="ray ray-1"></div>
-        <div className="ray ray-2"></div>
-        <div className="ray ray-3"></div>
       </div>
     </section>
   )
