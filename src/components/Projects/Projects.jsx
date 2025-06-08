@@ -234,7 +234,7 @@ const Projects = () => {
   }
 
   return (
-    <section className="projects-section" ref={containerRef}>
+    <section id='projects' className="projects-section" ref={containerRef}>
       <div className="projects-container">
         <div className="projects-header">
           <span className="section-tag">🎯 Portfolio Showcase</span>
