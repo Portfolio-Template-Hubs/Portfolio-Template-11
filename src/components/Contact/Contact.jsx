@@ -151,6 +151,13 @@ const Contact = () => {
       viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
     >
+      {/* Skills-style Animated Background */}
+      <div className="animated-background">
+        <div className="bg-blob bg-blob-1"></div>
+        <div className="bg-blob bg-blob-2"></div>
+        <div className="bg-blob bg-blob-3"></div>
+      </div>
+      
       {/* Animated Background */}
       <div className="contact-background">
         <div className="contact-orb contact-orb-1"></div>
@@ -218,6 +225,7 @@ const Contact = () => {
             Let's Create Something 
             <span className="gradient-text">Amazing Together</span>
           </motion.h2>
+          <div className="title-underline"></div>
           <motion.p variants={itemVariants}>
             Have a project in mind or just want to chat about technology? 
             I'd love to hear from you. Let's turn your ideas into reality!

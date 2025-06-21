@@ -53,6 +53,13 @@ const Hero = () => {
 
   return (
     <section id="home" className="hero-section">
+      {/* Skills-style Animated Background */}
+      <div className="animated-background">
+        <div className="bg-blob bg-blob-1"></div>
+        <div className="bg-blob bg-blob-2"></div>
+        <div className="bg-blob bg-blob-3"></div>
+      </div>
+      
       {/* Enhanced Animated Background */}
       <div className="hero-background">
         {/* Main gradient orbs */}

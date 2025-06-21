@@ -27,6 +27,13 @@ const About = () => {
 
   return (
     <section className="about" id="about">
+      {/* Animated Background */}
+      <div className="animated-background">
+        <div className="bg-blob bg-blob-1"></div>
+        <div className="bg-blob bg-blob-2"></div>
+        <div className="bg-blob bg-blob-3"></div>
+      </div>
+      
       <motion.div 
         className="about-container"
         variants={containerVariants}
@@ -37,6 +44,7 @@ const About = () => {
         <motion.h2 className="section-title" variants={itemVariants}>
           About Me
         </motion.h2>
+        <div className="title-underline"></div>
         
         <div className="about-content">
           <motion.div className="about-text" variants={itemVariants}>

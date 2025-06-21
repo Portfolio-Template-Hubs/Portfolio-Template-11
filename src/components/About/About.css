@@ -1,20 +1,57 @@
 .about {
   padding: 100px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
   color: white;
   position: relative;
   overflow: hidden;
 }
 
-.about::before {
-  content: '';
+/* Animated Background */
+.animated-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
-  background-size: 100% 100%;
+  inset: 0;
+  opacity: 0.2;
+}
+
+.bg-blob {
+  position: absolute;
+  width: 384px;
+  height: 384px;
+  border-radius: 50%;
+  filter: blur(3rem);
+  animation: pulse 3s infinite;
+}
+
+.bg-blob-1 {
+  top: 25%;
+  left: 25%;
+  background: linear-gradient(90deg, #60a5fa, #a855f7);
+}
+
+.bg-blob-2 {
+  bottom: 25%;
+  right: 25%;
+  background: linear-gradient(90deg, #fb7185, #f97316);
+  animation-delay: 1s;
+}
+
+.bg-blob-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #4ade80, #14b8a6);
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .about-container {
@@ -27,13 +64,31 @@
 
 .section-title {
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 3.75rem;
+  font-weight: 700;
   margin-bottom: 4rem;
-  background: linear-gradient(45deg, #fff, #f0f0f0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899);
   background-clip: text;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: pulse-text 2s infinite;
+}
+
+@keyframes pulse-text {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.title-underline {
+  width: 128px;
+  height: 4px;
+  background: linear-gradient(90deg, #06b6d4, #a855f7);
+  margin: 24px auto 0;
+  border-radius: 2px;
 }
 
 .about-content {
@@ -60,17 +115,19 @@
 }
 
 .highlight {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
   padding: 1.5rem;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .highlight:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.2);
 }
 
 .highlight h4 {
@@ -105,15 +162,23 @@
   position: absolute;
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.floating-card:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.2);
 }
 
 .card-1 {
