@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Github, Linkedin, Mail, Download, Sparkles, Code, Palette, Zap, Star, Heart } from 'lucide-react'
+import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react'
 import './Hero.css'
 
 const Hero = () => {
@@ -27,19 +27,6 @@ const Hero = () => {
     }
   }
 
-  const floatingItemVariants = {
-    hidden: { scale: 0, opacity: 0, rotate: -180 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        duration: 0.8,
-        ease: "backOut"
-      }
-    }
-  }
-
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -53,85 +40,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="hero-section">
-      {/* Skills-style Animated Background */}
-      <div className="animated-background">
-        <div className="bg-blob bg-blob-1"></div>
-        <div className="bg-blob bg-blob-2"></div>
-        <div className="bg-blob bg-blob-3"></div>
-      </div>
+      {/* Pure black background - all animations removed */}
       
-      {/* Enhanced Animated Background */}
-      <div className="hero-background">
-        {/* Main gradient orbs */}
-        <div className="gradient-orb gradient-orb-1"></div>
-        <div className="gradient-orb gradient-orb-2"></div>
-        <div className="gradient-orb gradient-orb-3"></div>
-        <div className="gradient-orb gradient-orb-4"></div>
-        
-        {/* Additional gradient layers */}
-        <div className="gradient-mesh"></div>
-        <div className="noise-overlay"></div>
-        
-        {/* Enhanced floating shapes - reduced from 12 to 6 */}
-        <div className="floating-shapes">
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className={`floating-shape shape-${i + 1}`}
-              animate={{
-                y: [-20, 20, -20],
-                x: [-5, 5, -5],
-                rotate: [0, 180],
-                scale: [0.9, 1.1, 0.9]
-              }}
-              transition={{
-                duration: 8 + i * 0.3,
-                repeat: Infinity,
-                ease: "linear",
-                delay: i * 0.2
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Enhanced floating icons - reduced from 6 to 3 */}
-        <motion.div 
-          className="floating-icon floating-icon-1"
-          variants={floatingItemVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1 }}
-        >
-          <Code size={28} />
-        </motion.div>
-        
-        <motion.div 
-          className="floating-icon floating-icon-2"
-          variants={floatingItemVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1.3 }}
-        >
-          <Palette size={28} />
-        </motion.div>
-        
-        <motion.div 
-          className="floating-icon floating-icon-3"
-          variants={floatingItemVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1.6 }}
-        >
-          <Sparkles size={28} />
-        </motion.div>
-
-        {/* Geometric patterns - reduced to 2 */}
-        <div className="geometric-patterns">
-          <div className="pattern-circle pattern-1"></div>
-          <div className="pattern-triangle pattern-2"></div>
-        </div>
-      </div>
-
       <div className="container">
         <motion.div
           className="hero-content"
@@ -203,7 +113,7 @@ const Hero = () => {
                   className="role-text role-dev"
                   whileHover={{ 
                     scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.5)"
+                    textShadow: "0 0 20px rgba(45, 212, 191, 0.5)"
                   }}
                 >
                   Full Stack Developer
@@ -213,7 +123,7 @@ const Hero = () => {
                   className="role-text role-designer"
                   whileHover={{ 
                     scale: 1.05,
-                    textShadow: "0 0 20px rgba(6, 182, 212, 0.5)"
+                    textShadow: "0 0 20px rgba(167, 139, 250, 0.5)"
                   }}
                 >
                   UI/UX Designer
@@ -279,7 +189,7 @@ const Hero = () => {
               whileHover={{ 
                 scale: 1.05, 
                 y: -3,
-                boxShadow: "0 15px 40px rgba(139, 92, 246, 0.4)"
+                boxShadow: "0 15px 40px rgba(45, 212, 191, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -324,7 +234,7 @@ const Hero = () => {
                 scale: 1.3, 
                 rotate: 10, 
                 y: -5,
-                boxShadow: "0 10px 30px rgba(139, 92, 246, 0.3)"
+                boxShadow: "0 10px 30px rgba(45, 212, 191, 0.3)"
               }}
               transition={{ duration: 0.2 }}
             >
@@ -339,7 +249,7 @@ const Hero = () => {
                 scale: 1.3, 
                 rotate: -10, 
                 y: -5,
-                boxShadow: "0 10px 30px rgba(6, 182, 212, 0.3)"
+                boxShadow: "0 10px 30px rgba(167, 139, 250, 0.3)"
               }}
               transition={{ duration: 0.2 }}
             >
@@ -352,7 +262,7 @@ const Hero = () => {
                 scale: 1.3, 
                 rotate: 10, 
                 y: -5,
-                boxShadow: "0 10px 30px rgba(16, 185, 129, 0.3)"
+                boxShadow: "0 10px 30px rgba(249, 115, 22, 0.3)"
               }}
               transition={{ duration: 0.2 }}
             >
@@ -379,20 +289,14 @@ const Hero = () => {
               <div className="image-placeholder">
                 <motion.span
                   animate={{ 
-                    textShadow: [
-                      "0 0 20px rgba(255,255,255,0.5)",
-                      "0 0 30px rgba(139,92,246,0.8)",
-                      "0 0 20px rgba(6,182,212,0.8)",
-                      "0 0 20px rgba(255,255,255,0.5)"
-                    ]
+                    textShadow: "0 0 20px rgba(255,255,255,0.5)"
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
                   Your Photo
                 </motion.span>
               </div>
-              <div className="image-overlay"></div>
-              <div className="image-glow"></div>
+              {/* Image overlay and glow removed */}
             </div>
             
             {/* Enhanced Status Indicator */}
@@ -401,9 +305,9 @@ const Hero = () => {
               animate={{ 
                 scale: [1, 1.05, 1],
                 boxShadow: [
-                  "0 0 20px rgba(16, 185, 129, 0.3)",
-                  "0 0 30px rgba(16, 185, 129, 0.5)",
-                  "0 0 20px rgba(16, 185, 129, 0.3)"
+                  "0 0 20px rgba(45, 212, 191, 0.3)",
+                  "0 0 30px rgba(45, 212, 191, 0.5)",
+                  "0 0 20px rgba(45, 212, 191, 0.3)"
                 ]
               }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -413,9 +317,9 @@ const Hero = () => {
                 animate={{ 
                   scale: [1, 1.4, 1],
                   boxShadow: [
-                    "0 0 0 0 rgba(16, 185, 129, 0.7)",
-                    "0 0 0 10px rgba(16, 185, 129, 0)",
-                    "0 0 0 0 rgba(16, 185, 129, 0.7)"
+                    "0 0 0 0 rgba(45, 212, 191, 0.7)",
+                    "0 0 0 10px rgba(45, 212, 191, 0)",
+                    "0 0 0 0 rgba(45, 212, 191, 0.7)"
                   ]
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -448,33 +352,8 @@ const Hero = () => {
           <span className="scroll-text">Discover More</span>
         </motion.a>
       </motion.div>
-
-      {/* Enhanced Particles - reduced from 25 to 12 */}
-      <div className="particles">
-        {[...Array(12)].map((_, i) => (
-          <motion.div
-            key={i}
-            className={`particle particle-${i + 1}`}
-            animate={{
-              y: [-10, -30, -10],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [0.8, 1.2, 0.8],
-              rotate: [0, 180]
-            }}
-            transition={{
-              duration: 6 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "linear"
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Light rays - reduced to 1 */}
-      <div className="light-rays">
-        <div className="ray ray-1"></div>
-      </div>
+      
+      {/* All particles and light rays removed */}
     </section>
   )
 }
